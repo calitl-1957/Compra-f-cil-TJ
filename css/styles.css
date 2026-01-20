@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compra Fácil TJ</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <header>
+        <h1>Compra Fácil TJ</h1>
+        <p>Tu tienda confiable en Tijuana</p>
+    </header>
+
+    <nav>
+        <a href="#">Inicio</a>
+        <a href="#">Catálogo</a>
+        <a href="#">Preventa</a>
+        <a href="#">Contacto</a>
+    </nav>
+
+    <section class="hero">
+        <h2>Bienvenido a Compra Fácil TJ</h2>
+        <p>Productos de ferretería, ropa, calzado, flores y más.</p>
+    </section>
+
+    <section class="categorias">
+        <h2>Categorías</h2>
+
+        <div class="grid">
+            <div class="card">Ferretería</div>
+            <div class="card">Ropa</div>
+            <div class="card">Calzado</div>
+            <div class="card">Flores</div>
+            <div class="card">Electrónica</div>
+            <div class="card">Hogar</div>
+        </div>
+    </section>
+
+    <footer>
+        <p>Compra Fácil TJ © 2026 • Tijuana, México</p>
+        <p>WhatsApp: 664-000-0000</p>
+    </footer>
+
+</body>
+</html>
