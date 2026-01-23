@@ -71,3 +71,24 @@ footer {
   color: white;
   font-weight: bold;
 }
+.about, .policy {
+  background-color: #fff;
+  margin: 20px;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.about h2, .policy h2 {
+  color: #ff6f61;
+  margin-bottom: 10px;
+}
+
+.policy ul {
+  list-style: none;
+  padding: 0;
+}
+
+.policy li {
+  margin-bottom: 8px;
+}
