@@ -73,6 +73,7 @@ footer {
 }
 .about, .policy {
   background-color: #fff;
+  color: #000; /* ← Esto asegura que el texto se vea negro */
   margin: 20px;
   padding: 20px;
   border-radius: 8px;
