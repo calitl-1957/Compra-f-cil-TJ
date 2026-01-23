@@ -1,47 +1,73 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Compra Fácil TJ</title>
-    <link rel="stylesheet" href="css/styles.css">
-</head>
-<body>
+/* Estilos generales */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: #f9f9f9;
+  color: #333;
+}
 
-    <header>
-        <h1>Compra Fácil TJ</h1>
-        <p>Tu tienda confiable en Tijuana</p>
-    </header>
+/* Encabezado */
+header {
+  background-color: #ff6f61;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
 
-    <nav>
-        <a href="#">Inicio</a>
-        <a href="#">Catálogo</a>
-        <a href="#">Preventa</a>
-        <a href="#">Contacto</a>
-    </nav>
+/* Menú de navegación */
+nav {
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  padding: 15px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+nav a {
+  text-decoration: none;
+  color: #ff6f61;
+  font-weight: bold;
+}
 
-    <section class="hero">
-        <h2>Bienvenido a Compra Fácil TJ</h2>
-        <p>Productos de ferretería, ropa, calzado, flores y más.</p>
-    </section>
+/* Sección principal */
+.hero {
+  text-align: center;
+  padding: 40px 20px;
+}
+.hero h1 {
+  font-size: 2.5em;
+  margin-bottom: 10px;
+}
 
-    <section class="categorias">
-        <h2>Categorías</h2>
+/* Categorías */
+.categories {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+.category {
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+.category img {
+  width: 60px;
+  margin-bottom: 10px;
+}
 
-        <div class="grid">
-            <div class="card">Ferretería</div>
-            <div class="card">Ropa</div>
-            <div class="card">Calzado</div>
-            <div class="card">Flores</div>
-            <div class="card">Electrónica</div>
-            <div class="card">Hogar</div>
-        </div>
-    </section>
-
-    <footer>
-        <p>Compra Fácil TJ © 2026 • Tijuana, México</p>
-        <p>WhatsApp: 664-000-0000</p>
-    </footer>
-
-</body>
-</html>
+/* Pie de página */
+footer {
+  background-color: #ff6f61;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+.social-buttons a {
+  margin: 0 10px;
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+}
