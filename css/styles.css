@@ -1,73 +1,57 @@
+/* Estilos generales */
 body {
   font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
   margin: 0;
-  background: #f9f9f9;
-  color: #333;
+  padding: 0;
 }
 
+/* Encabezado */
 header {
-  background: #ff6600;
+  background-color: #ff6600;
   color: white;
-  padding: 20px;
   text-align: center;
+  padding: 20px;
 }
 
+header h1 {
+  margin: 0;
+  font-size: 32px;
+}
+
+header p {
+  margin: 5px 0 0;
+  font-size: 18px;
+}
+
+/* Menú de navegación */
 nav {
-  background: #333;
+  background-color: #333;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
   padding: 10px;
-  text-align: center;
 }
 
 nav a {
   color: white;
-  margin: 0 15px;
   text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
 }
 
-section {
-  padding: 20px;
+nav a:hover {
+  color: #ff6600;
 }
 
-.catalog {
-  background: #fff;
-  padding: 20px;
-}
-
-.product-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 20px;
-}
-
-.product-card {
-  border: 1px solid #ddd;
-  padding: 15px;
-  text-align: center;
-  background: #fafafa;
-  border-radius: 8px;
-  transition: transform 0.2s;
-}
-
-.product-card:hover {
-  transform: scale(1.05);
-}
-
-.product-card img {
-  max-width: 100%;
-  height: auto;
-  margin-bottom: 10px;
-}
-
-footer {
-  background: #333;
-  color: white;
-  text-align: center;
-  padding: 10px;
-}
-
+/* Buscador */
 .buscador-container {
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
   margin: 30px 0;
+  flex-wrap: wrap;
 }
 
 #buscador {
@@ -76,7 +60,7 @@ footer {
   font-size: 16px;
   border: 2px solid #ccc;
   border-radius: 8px;
-  margin-right: 10px;
+  outline: none;
 }
 
 .buscador-container button {
@@ -93,3 +77,37 @@ footer {
 .buscador-container button:hover {
   background-color: #e65c00;
 }
+
+/* Catálogo */
+#catalogo {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  padding: 20px;
+}
+
+.producto {
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 15px;
+  text-align: center;
+  width: 220px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease;
+}
+
+.producto:hover {
+  transform: scale(1.05);
+}
+
+.producto img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+.producto h3 {
+  margin: 10px 0 0;
+  font
