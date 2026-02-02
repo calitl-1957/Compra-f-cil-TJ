@@ -12,6 +12,37 @@
     <h1>Compra Fácil TJ</h1>
     <p>Tu tienda confiable en Tijuana</p>
   </header>
+  
+<input type="text" id="buscador" placeholder="Buscar producto...">
+<button onclick="buscarProducto()">Buscar</button>
+
+<section id="catalogo">
+  <div class="producto">
+    <img src="img/martillo.png" alt="Martillo Truper" width="200">
+    <h3>Martillo Truper</h3>
+  </div>
+
+  <div class="producto">
+    <img src="img/esmeriladora.png" alt="Esmeriladora Truper" width="200">
+    <h3>Esmeriladora Truper</h3>
+  </div>
+</section>
+
+<script>
+function buscarProducto() {
+  let input = document.getElementById("buscador").value.toLowerCase();
+  let productos = document.getElementsByClassName("producto");
+
+  for (let i = 0; i < productos.length; i++) {
+    let nombre = productos[i].getElementsByTagName("h3")[0].innerText.toLowerCase();
+    if (nombre.includes(input)) {
+      productos[i].style.display = "block";
+    } else {
+      productos[i].style.display = "none";
+    }
+  }
+}
+</script>
 
   <nav>
     <a href="#ferreteria">Ferretería</a>
