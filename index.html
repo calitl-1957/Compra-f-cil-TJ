@@ -3,125 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Compra Fácil TJ</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f9f9f9;
-      margin: 0;
-      padding: 0;
-    }
-
-    header {
-      background-color: #ff6600;
-      color: white;
-      text-align: center;
-      padding: 20px;
-    }
-
-    nav {
-      background-color: #333;
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      padding: 10px;
-    }
-
-    nav a {
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    nav a:hover {
-      color: #ff6600;
-    }
-
-    .buscador-container {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 10px;
-      margin: 30px 0;
-      flex-wrap: wrap;
-    }
-
-    #buscador {
-      padding: 10px;
-      width: 250px;
-      font-size: 16px;
-      border: 2px solid #ccc;
-      border-radius: 8px;
-      outline: none;
-    }
-
-    .buscador-container button {
-      padding: 10px 20px;
-      font-size: 16px;
-      background-color: #ff6600;
-      color: white;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-    }
-
-    .buscador-container button:hover {
-      background-color: #e65c00;
-    }
-
-    #catalogo {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      flex-wrap: wrap;
-      padding: 20px;
-    }
-
-    .producto {
-      background: white;
-      border: 1px solid #ddd;
-      border-radius: 8px;
-      padding: 15px;
-      text-align: center;
-      width: 200px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    }
-
-    .producto img {
-      max-width: 100%;
-      height: auto;
-      border-radius: 5px;
-    }
-
-    .producto h3 {
-      margin: 10px 0 0;
-      font-size: 18px;
-      color: #333;
-    }
-
-    .producto p {
-      margin: 5px 0;
-      color: #555;
-    }
-
-    footer {
-      background-color: #333;
-      color: white;
-      text-align: center;
-      padding: 20px;
-      margin-top: 30px;
-    }
-
-    .social-links a {
-      margin: 0 10px;
-      color: white;
-      text-decoration: none;
-    }
-
-    .social-links a:hover {
-      color: #ff6600;
-    }
-  </style>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
@@ -140,41 +22,29 @@
 
   <!-- Buscador -->
   <div class="buscador-container">
-    <input type="text" id="buscador" placeholder="Buscar producto..." />
+    <input type="text" id="buscador" placeholder="Buscar producto por nombre o código..." />
     <button onclick="buscarProducto()">🔍 Buscar</button>
   </div>
 
-  <!-- Catálogo precargado -->
-  <section id="catalogo">
-    <div class="producto">
-      <img src="img/martillo.png" alt="Martillo Truper">
-      <h3>Martillo Truper</h3>
-      <p>Precio original: $145</p>
-    </div>
-
-    <div class="producto">
-      <img src="img/esmeriladora.png" alt="Esmeriladora Truper">
-      <h3>Esmeriladora Truper</h3>
-      <p>Precio original: $3,650</p>
-    </div>
-
-    <div class="producto">
-      <img src="img/desarmador.png" alt="Desarmador Truper">
-      <h3>Desarmador Truper</h3>
-      <p>Precio original: $50</p>
-      <p>Precio sugerido (+10%): $55</p>
-    </div>
+  <!-- Subir archivo Excel/CSV -->
+  <section style="text-align:center; padding:20px;">
+    <h2>Cargar catálogo</h2>
+    <input type="file" id="fileInput" accept=".csv, .xlsx" />
+    <p>Sube tu archivo con columnas: <b>codigo, descripcion, precio</b></p>
   </section>
 
+  <!-- Catálogo dinámico -->
+  <section id="catalogo"></section>
+
   <!-- Pagos -->
-  <section id="pagos" style="padding:20px; text-align:center;">
+  <section id="pagos">
     <h2>Formas de Pago</h2>
     <p>💳 Depósitos y transferencias: Cuenta bancaria XXXX-XXXX-XXXX</p>
     <p>🏪 Pago en OXXO: Número de referencia 1234567890</p>
   </section>
 
   <!-- Contacto -->
-  <section id="contacto" style="padding:20px; text-align:center;">
+  <section id="contacto">
     <h2>Contacto</h2>
     <p>📞 WhatsApp: <a href="https://wa.me/5216641234567" target="_blank">Chatea conmigo</a></p>
     <p>💬 Telegram: <a href="https://t.me/tuusuario" target="_blank">Entra al chat</a></p>
@@ -182,7 +52,7 @@
   </section>
 
   <!-- Sobre Nosotros -->
-  <section id="nosotros" style="padding:20px; text-align:center;">
+  <section id="nosotros">
     <h2>Sobre Nosotros</h2>
     <p>Compra Fácil TJ es tu tienda confiable en Tijuana para herramientas Truper, ropa y calzado. 
     Ofrecemos precios accesibles y atención personalizada.</p>
@@ -198,17 +68,57 @@
     </div>
   </footer>
 
+  <!-- Librería para leer Excel/CSV -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.2/papaparse.min.js"></script>
+
   <script>
+    // Cargar archivo CSV
+    document.getElementById("fileInput").addEventListener("change", function(event) {
+      let file = event.target.files[0];
+      Papa.parse(file, {
+        header: true,
+        complete: function(results) {
+          mostrarCatalogo(results.data);
+        }
+      });
+    });
+
+    // Mostrar catálogo
+    function mostrarCatalogo(productos) {
+      let catalogo = document.getElementById("catalogo");
+      catalogo.innerHTML = "";
+      productos.forEach(p => {
+        if (p.codigo && p.descripcion && p.precio) {
+          let div = document.createElement("div");
+          div.className = "producto";
+          div.setAttribute("data-codigo", p.codigo);
+          div.innerHTML = `
+            <img src="img/${p.codigo}.png" alt="${p.descripcion}">
+            <h3>${p.descripcion}</h3>
+            <p>Código: ${p.codigo}</p>
+            <p>Precio: $${p.precio}</p>
+          `;
+          catalogo.appendChild(div);
+        }
+      });
+    }
+
+    // Buscador por nombre o código
     function buscarProducto() {
       let input = document.getElementById("buscador").value.toLowerCase();
       let productos = document.getElementsByClassName("producto");
 
       for (let i = 0; i < productos.length; i++) {
         let nombre = productos[i].getElementsByTagName("h3")[0].innerText.toLowerCase();
-        productos[i].style.display = nombre.includes(input) ? "block" : "none";
+        let codigo = productos[i].getAttribute("data-codigo").toLowerCase();
+
+        if (nombre.includes(input) || codigo.includes(input)) {
+          productos[i].style.display = "block";
+        } else {
+          productos[i].style.display = "none";
+        }
       }
 
-      // Si el buscador está vacío, mostrar todos
       if (input === "") {
         for (let i = 0; i < productos.length; i++) {
           productos[i].style.display = "block";
