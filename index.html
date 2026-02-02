@@ -12,7 +12,6 @@
     <p>Ferretería, Ropa y Calzado</p>
   </header>
 
-  <!-- Menú -->
   <nav>
     <a href="#catalogo">Catálogo</a>
     <a href="#pagos">Pagos</a>
@@ -20,30 +19,25 @@
     <a href="#nosotros">Sobre Nosotros</a>
   </nav>
 
-  <!-- Buscador -->
   <div class="buscador-container">
     <input type="text" id="buscador" placeholder="Buscar producto por nombre o código..." />
     <button onclick="buscarProducto()">🔍 Buscar</button>
   </div>
 
-  <!-- Panel oculto para cargar CSV (solo admin) -->
   <div class="admin-panel">
     <h2>Cargar catálogo</h2>
     <input type="file" id="fileInput" accept=".csv" />
     <p>Sube tu archivo con columnas: <b>codigo, descripcion, precio</b></p>
   </div>
 
-  <!-- Catálogo dinámico -->
   <section id="catalogo"></section>
 
-  <!-- Pagos -->
   <section id="pagos">
     <h2>Formas de Pago</h2>
     <p>💳 Depósitos y transferencias: Cuenta bancaria XXXX-XXXX-XXXX</p>
     <p>🏪 Pago en OXXO: Número de referencia 1234567890</p>
   </section>
 
-  <!-- Contacto -->
   <section id="contacto">
     <h2>Contacto</h2>
     <p>📞 WhatsApp: <a href="https://wa.me/5216641234567" target="_blank">Chatea conmigo</a></p>
@@ -51,14 +45,12 @@
     <p>📘 Facebook: <a href="https://facebook.com/tuusuario" target="_blank">Visítanos en Facebook</a></p>
   </section>
 
-  <!-- Sobre Nosotros -->
   <section id="nosotros">
     <h2>Sobre Nosotros</h2>
     <p>Compra Fácil TJ es tu tienda confiable en Tijuana para herramientas Truper, ropa y calzado. 
     Ofrecemos precios accesibles y atención personalizada.</p>
   </section>
 
-  <!-- Footer -->
   <footer>
     <p>&copy; 2026 Compra Fácil TJ - Todos los derechos reservados</p>
     <div class="social-links">
@@ -68,11 +60,9 @@
     </div>
   </footer>
 
-  <!-- Librería para leer CSV -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.2/papaparse.min.js"></script>
 
   <script>
-    // Cargar archivo CSV (solo admin)
     document.getElementById("fileInput").addEventListener("change", function(event) {
       let file = event.target.files[0];
       Papa.parse(file, {
@@ -83,7 +73,6 @@
       });
     });
 
-    // Mostrar catálogo
     function mostrarCatalogo(productos) {
       let catalogo = document.getElementById("catalogo");
       catalogo.innerHTML = "";
@@ -103,7 +92,6 @@
       });
     }
 
-    // Buscador por nombre o código
     function buscarProducto() {
       let input = document.getElementById("buscador").value.toLowerCase();
       let productos = document.getElementsByClassName("producto");
@@ -112,11 +100,7 @@
         let nombre = productos[i].getElementsByTagName("h3")[0].innerText.toLowerCase();
         let codigo = productos[i].getAttribute("data-codigo").toLowerCase();
 
-        if (nombre.includes(input) || codigo.includes(input)) {
-          productos[i].style.display = "block";
-        } else {
-          productos[i].style.display = "none";
-        }
+        productos[i].style.display = (nombre.includes(input) || codigo.includes(input)) ? "block" : "none";
       }
 
       if (input === "") {
