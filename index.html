@@ -2,108 +2,65 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Compra Fácil TJ</title>
-  <link rel="stylesheet" href="css/styles.css">
-</head>
-<body>
-
-  <header>
-    <h1>Compra Fácil TJ</h1>
-    <p>Tu tienda confiable en Tijuana</p>
-  </header>
-  
-<input type="text" id="buscador" placeholder="Buscar producto...">
-<button onclick="buscarProducto()">Buscar</button>
-
-<section id="catalogo">
-  <div class="producto">
-    <img src="img/martillo.png" alt="Martillo Truper" width="200">
-    <h3>Martillo Truper</h3>
-  </div>
-
-  <div class="buscador-container">
-  <input type="text" id="buscador" placeholder="Buscar producto..." />
-  <button onclick="buscarProducto()">🔍 Buscar</button>
-</div>
-
-<script>
-function buscarProducto() {
-  let input = document.getElementById("buscador").value.toLowerCase();
-  let productos = document.getElementsByClassName("producto");
-
-  for (let i = 0; i < productos.length; i++) {
-    let nombre = productos[i].getElementsByTagName("h3")[0].innerText.toLowerCase();
-    productos[i].style.display = nombre.includes(input) ? "block" : "none";
-  }
-}
-</script>
-
-  <div class="producto">
-    <img src="img/esmeriladora.png" alt="Esmeriladora Truper" width="200">
-    <h3>Esmeriladora Truper</h3>
-  </div>
-</section>
-
-<script>
-function buscarProducto() {
-  let input = document.getElementById("buscador").value.toLowerCase();
-  let productos = document.getElementsByClassName("producto");
-
-  for (let i = 0; i < productos.length; i++) {
-    let nombre = productos[i].getElementsByTagName("h3")[0].innerText.toLowerCase();
-    if (nombre.includes(input)) {
-      productos[i].style.display = "block";
-    } else {
-      productos[i].style.display = "none";
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
+      margin: 0;
+      padding: 0;
     }
-  }
-}
-</script>
 
-  <nav>
-    <a href="#ferreteria">Ferretería</a>
-    <a href="#ropa">Ropa</a>
-    <a href="#calzado">Calzado</a>
-    <a href="#catalogo">Catálogo Ferretero</a>
-  </nav>
+    header {
+      background-color: #ff6600;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
 
-  <section id="ferreteria">
-    <h2>Ferretería</h2>
-    <p>Herramientas y accesorios para tu hogar y negocio.</p>
-  </section>
+    .buscador-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      margin: 30px 0;
+      flex-wrap: wrap;
+    }
 
-  <section id="ropa">
-    <h2>Ropa</h2>
-    <p>Playeras, pantalones y más.</p>
-  </section>
+    #buscador {
+      padding: 10px;
+      width: 250px;
+      font-size: 16px;
+      border: 2px solid #ccc;
+      border-radius: 8px;
+      outline: none;
+    }
 
-  <section id="calzado">
-    <h2>Calzado</h2>
-    <p>Tenis, botas y sandalias.</p>
-  </section>
+    .buscador-container button {
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #ff6600;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
 
-  <section id="catalogo" class="catalog">
-    <h2>catalago </h2>
-    <div class="product-grid">
+    .buscador-container button:hover {
+      background-color: #e65c00;
+    }
 
-      <div class="product-card">
-        <img src="img/martillo.png" alt="Martillo Truper">
-        <h3>Martillo Truper 16 oz</h3>
-        <p>Precio: $150 MXN</p>
-      </div>
+    #catalogo {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      padding: 20px;
+    }
 
-    <div class="producto">
-  <img src="img/esmeriladora.png" alt="Esmeriladora Truper" width="200">
-  <h3>Esmeriladora Truper</h3>
-</div>
-
-  </section>
-
-  <footer>
-    <p>© 2026 Compra Fácil TJ</p>
-  </footer>
-
-</body>
-</html>
-
+    .producto {
+      background: white;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding
