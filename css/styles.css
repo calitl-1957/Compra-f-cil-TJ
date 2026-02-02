@@ -110,4 +110,47 @@ nav a:hover {
 
 .producto h3 {
   margin: 10px 0 0;
-  font
+  font-size: 18px;
+  color: #333;
+}
+
+.producto p {
+  margin: 5px 0;
+  color: #555;
+}
+
+/* Secciones */
+section {
+  padding: 20px;
+  text-align: center;
+}
+
+section h2 {
+  color: #ff6600;
+  margin-bottom: 10px;
+}
+
+/* Footer */
+footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  margin-top: 30px;
+}
+
+.social-links a {
+  margin: 0 10px;
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+  color: #ff6600;
+}
+
+/* Panel de administración oculto */
+.admin-panel {
+  display: none; /* Oculto para clientes */
+}
