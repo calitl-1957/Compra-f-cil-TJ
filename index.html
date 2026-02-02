@@ -18,6 +18,24 @@
       padding: 20px;
     }
 
+    nav {
+      background-color: #333;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      padding: 10px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      color: #ff6600;
+    }
+
     .buscador-container {
       display: flex;
       justify-content: center;
@@ -63,4 +81,143 @@
       background: white;
       border: 1px solid #ddd;
       border-radius: 8px;
-      padding
+      padding: 15px;
+      text-align: center;
+      width: 200px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    .producto img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 5px;
+    }
+
+    .producto h3 {
+      margin: 10px 0 0;
+      font-size: 18px;
+      color: #333;
+    }
+
+    .producto p {
+      margin: 5px 0;
+      color: #555;
+    }
+
+    footer {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 30px;
+    }
+
+    .social-links a {
+      margin: 0 10px;
+      color: white;
+      text-decoration: none;
+    }
+
+    .social-links a:hover {
+      color: #ff6600;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Compra Fácil TJ</h1>
+    <p>Ferretería, Ropa y Calzado</p>
+  </header>
+
+  <!-- Menú -->
+  <nav>
+    <a href="#catalogo">Catálogo</a>
+    <a href="#pagos">Pagos</a>
+    <a href="#contacto">Contacto</a>
+    <a href="#nosotros">Sobre Nosotros</a>
+  </nav>
+
+  <!-- Buscador -->
+  <div class="buscador-container">
+    <input type="text" id="buscador" placeholder="Buscar producto..." />
+    <button onclick="buscarProducto()">🔍 Buscar</button>
+  </div>
+
+  <!-- Catálogo precargado -->
+  <section id="catalogo">
+    <div class="producto">
+      <img src="img/martillo.png" alt="Martillo Truper">
+      <h3>Martillo Truper</h3>
+      <p>Precio original: $100</p>
+      <p>Precio sugerido (+10%): $110</p>
+    </div>
+
+    <div class="producto">
+      <img src="img/esmeriladora.png" alt="Esmeriladora Truper">
+      <h3>Esmeriladora Truper</h3>
+      <p>Precio original: $1200</p>
+      <p>Precio sugerido (+10%): $1320</p>
+    </div>
+
+    <div class="producto">
+      <img src="img/desarmador.png" alt="Desarmador Truper">
+      <h3>Desarmador Truper</h3>
+      <p>Precio original: $50</p>
+      <p>Precio sugerido (+10%): $55</p>
+    </div>
+  </section>
+
+  <!-- Pagos -->
+  <section id="pagos" style="padding:20px; text-align:center;">
+    <h2>Formas de Pago</h2>
+    <p>💳 Depósitos y transferencias: Cuenta bancaria XXXX-XXXX-XXXX</p>
+    <p>🏪 Pago en OXXO: Número de referencia 1234567890</p>
+  </section>
+
+  <!-- Contacto -->
+  <section id="contacto" style="padding:20px; text-align:center;">
+    <h2>Contacto</h2>
+    <p>📞 WhatsApp: <a href="https://wa.me/5216641234567" target="_blank">Chatea conmigo</a></p>
+    <p>💬 Telegram: <a href="https://t.me/tuusuario" target="_blank">Entra al chat</a></p>
+    <p>📘 Facebook: <a href="https://facebook.com/tuusuario" target="_blank">Visítanos en Facebook</a></p>
+  </section>
+
+  <!-- Sobre Nosotros -->
+  <section id="nosotros" style="padding:20px; text-align:center;">
+    <h2>Sobre Nosotros</h2>
+    <p>Compra Fácil TJ es tu tienda confiable en Tijuana para herramientas Truper, ropa y calzado. 
+    Ofrecemos precios accesibles y atención personalizada.</p>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2026 Compra Fácil TJ - Todos los derechos reservados</p>
+    <div class="social-links">
+      <a href="https://facebook.com/tuusuario" target="_blank">Facebook</a>
+      <a href="https://wa.me/5216641234567" target="_blank">WhatsApp</a>
+      <a href="https://t.me/tuusuario" target="_blank">Telegram</a>
+    </div>
+  </footer>
+
+  <script>
+    function buscarProducto() {
+      let input = document.getElementById("buscador").value.toLowerCase();
+      let productos = document.getElementsByClassName("producto");
+
+      for (let i = 0; i < productos.length; i++) {
+        let nombre = productos[i].getElementsByTagName("h3")[0].innerText.toLowerCase();
+        productos[i].style.display = nombre.includes(input) ? "block" : "none";
+      }
+
+      // Si el buscador está vacío, mostrar todos
+      if (input === "") {
+        for (let i = 0; i < productos.length; i++) {
+          productos[i].style.display = "block";
+        }
+      }
+    }
+  </script>
+
+</body>
+</html>
