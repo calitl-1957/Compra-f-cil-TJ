@@ -1,0 +1,20 @@
+Compra-facil-TJ/
+│
+├── index.html          ← Página principal con catálogo y secciones
+│
+├── css/
+│   └── styles.css      ← Archivo de estilos (colores, cuadrícula, tipografía)
+│
+├── img/                ← Carpeta de imágenes
+│   ├── martillo.png
+│   ├── destornillador.png
+│   ├── llave.png
+│   ├── cinta.png
+│   ├── pinzas.png
+│   ├── taladro.png
+│   ├── brocas.png
+│   ├── cutter.png
+│   ├── manguera.png
+│   └── regleta.png
+│
+└── docs/               ← (Opcional) Manuales, guías o PDF
