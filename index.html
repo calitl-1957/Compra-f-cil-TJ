@@ -5,71 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Compra Fácil TJ</title>
   <link rel="stylesheet" href="css/styles.css">
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background: #f9f9f9;
-      color: #333;
-    }
-    header {
-      background-color: #ff6f61;
-      color: white;
-      padding: 20px;
-      text-align: center;
-    }
-    nav {
-      background-color: #fff;
-      display: flex;
-      justify-content: center;
-      gap: 30px;
-      padding: 15px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    }
-    nav a {
-      text-decoration: none;
-      color: #ff6f61;
-      font-weight: bold;
-    }
-    .hero {
-      text-align: center;
-      padding: 40px 20px;
-    }
-    .hero h1 {
-      font-size: 2.5em;
-      margin-bottom: 10px;
-    }
-    .categories {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 20px;
-      padding: 20px;
-    }
-    .category {
-      background-color: #fff;
-      border-radius: 8px;
-      padding: 20px;
-      text-align: center;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    }
-    .category img {
-      width: 60px;
-      margin-bottom: 10px;
-    }
-    footer {
-      background-color: #ff6f61;
-      color: white;
-      text-align: center;
-      padding: 20px;
-    }
-    .social-buttons a {
-      margin: 0 10px;
-      text-decoration: none;
-      color: white;
-      font-weight: bold;
-    }
-  </style>
 </head>
+
 <body>
 
   <header>
@@ -78,69 +15,134 @@
   </header>
 
   <nav>
-    <a href="#">Ferretería</a>
-    <a href="#">Ropa</a>
-    <a href="#">Calzado</a>
-    <a href="#">Flores</a>
+    <a href="#ferreteria">Ferretería</a>
+    <a href="#ropa">Ropa</a>
+    <a href="#calzado">Calzado</a>
+    <a href="#catalogo">Catálogo Truper</a>
   </nav>
 
-  <section class="hero">
-    <h1>¡Bienvenido!</h1>
+  <section class="intro">
+    <h2>¡Bienvenido!</h2>
     <p>Explora nuestros productos con entrega rápida y atención personalizada.</p>
   </section>
 
-  <section class="categories">
-    <div class="category">
-      <img src="https://img.icons8.com/color/96/hammer.png" alt="Ferretería">
+  <!-- FERRETERÍA -->
+  <section id="ferreteria" class="category">
+    <div class="card">
       <h3>Ferretería</h3>
       <p>Herramientas, tornillos, contactos y más.</p>
-    </div>
-    <div class="category">
-      <img src="https://img.icons8.com/color/96/t-shirt.png" alt="Ropa">
-      <h3>Ropa</h3>
-      <p>Playeras, pantalones, chamarras y más.</p>
-    </div>
-    <div class="category">
-      <img src="https://img.icons8.com/color/96/sneakers.png" alt="Calzado">
-      <h3>Calzado</h3>
-      <p>Tenis, botas, sandalias y más.</p>
-    </div>
-    <div class="category">
-      <img src="https://img.icons8.com/color/96/flower.png" alt="Flores">
-      <h3>Flores</h3>
-      <p>Arreglos, ramos y detalles para toda ocasión.</p>
+      <img src="img/ferreteria.png" alt="Ferretería">
     </div>
   </section>
 
-  <footer>
-    <p>Contáctanos directamente:</p>
-    <div class="social-buttons">
-      <a href="https://wa.me/5216641234567" target="_blank">WhatsApp</a>
-      <a href="https://www.facebook.com/CompraFacilTJ" target="_blank">Facebook</a>
-      <a href="mailto:compras@comprafaciltj.com">Correo</a>
+  <!-- ROPA -->
+  <section id="ropa" class="category">
+    <div class="card">
+      <h3>Ropa</h3>
+      <p>Playeras, pantalones, chamarras y más.</p>
+      <img src="img/ropa.png" alt="Ropa">
     </div>
-    <p>&copy; 2026 Compra Fácil TJ</p>
-<section class="about">
-  <h2>Sobre nosotros</h2>
-  <p>Compra Fácil TJ nace en Tijuana con la misión de ofrecer productos variados de ferretería, ropa, calzado y flores, siempre con atención personalizada y precios justos. Nuestro compromiso es brindar confianza y transparencia en cada compra.</p>
-</section>
+  </section>
 
-<section class="policy">
-  <h2>Política de ventas</h2>
-  <ul>
-    <li><strong>Preventa:</strong> Puedes apartar productos con anticipación y recibirlos en la fecha acordada.</li>
-    <li><strong>Entregas:</strong> Realizamos entregas rápidas y seguras en Tijuana.</li>
-    <li><strong>Garantía:</strong> Todos nuestros productos cuentan con garantía de calidad.</li>
-    <li><strong>Transparencia:</strong> Te informamos claramente sobre precios, tiempos de entrega y disponibilidad.</li>
-  </ul>
-</section>
+  <!-- CALZADO -->
+  <section id="calzado" class="category">
+    <div class="card">
+      <h3>Calzado</h3>
+      <p>Tenis, botas, sandalias y más.</p>
+      <img src="img/calzado.png" alt="Calzado">
+    </div>
+  </section>
 
+  <!-- CATÁLOGO TRUPER -->
+  <section id="catalogo" class="catalog">
+    <h2>Catálogo Truper</h2>
+    <p>Productos destacados de nuestro banco de herramientas Truper:</p>
+    <div class="product-grid">
+
+      <div class="product-card">
+        <img src="img/martillo.png" alt="Martillo Truper">
+        <h3>Martillo Truper</h3>
+        <p>Precio: $150 MXN</p>
+      </div>
+
+      <div class="product-card">
+        <img src="img/destornillador.png" alt="Juego de destornilladores">
+        <h3>Juego de destornilladores</h3>
+        <p>Precio: $220 MXN</p>
+      </div>
+
+      <div class="product-card">
+        <img src="img/llave.png" alt="Llave ajustable">
+        <h3>Llave ajustable</h3>
+        <p>Precio: $180 MXN</p>
+      </div>
+
+      <div class="product-card">
+        <img src="img/cinta.png" alt="Cinta métrica">
+        <h3>Cinta métrica 5m</h3>
+        <p>Precio: $95 MXN</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SOBRE NOSOTROS -->
+  <section class="about">
+    <h2>Sobre nosotros</h2>
+    <p>Somos una tienda local en Tijuana dedicada a ofrecer productos de calidad con atención personalizada y entregas rápidas.</p>
+  </section>
+
+  <!-- POLÍTICA DE VENTAS + MÉTODOS DE PAGO Y ENTREGAS -->
+  <section class="policy">
+    <h2>Política de ventas</h2>
+    <ul>
+      <li>- Preventa disponible en productos seleccionados</li>
+      <li>- Entregas en Tijuana</li>
+      <li>- No hay devoluciones después de aceptar el producto</li>
+      <li>- Revisión del producto al momento de la entrega</li>
+    </ul>
+
+    <h2>Métodos de pago y entregas</h2>
+    <ul>
+      <li><strong>Métodos de pago:</strong></li>
+      <li>- Efectivo al entregar</li>
+      <li>- Transferencia bancaria</li>
+      <li>- Depósito en OXXO</li>
+      <li>- Pago por preventa</li>
+      <li>- No manejamos tarjetas por ahora</li>
+    </ul>
+
+    <ul>
+      <li><strong>Entregas:</strong></li>
+      <li>- Entregas en Tijuana</li>
+      <li>- Punto de entrega acordado por WhatsApp</li>
+      <li>- Envíos locales con costo adicional</li>
+      <li>- Tiempo de entrega: 1 a 24 horas</li>
+      <li>- Preventas se entregan en la fecha acordada</li>
+    </ul>
+
+    <ul>
+      <li><strong>Garantía:</strong></li>
+      <li>- Revisión del producto al recibirlo</li>
+      <li>- No hay devoluciones después de aceptado</li>
+      <li>- Productos eléctricos deben probarse al momento</li>
+    </ul>
+  </section>
+
+  <!-- CONTACTO -->
+  <section class="contact">
+    <h2>Contáctanos directamente:</h2>
+    <p>WhatsApp | Facebook | Correo</p>
+  </section>
+
+  <footer>
+    <p>© 2026 Compra Fácil TJ</p>
   </footer>
-  <!-- Botón flotante de WhatsApp -->
-  <a href="https://wa.me/5216641234567" 
-     style="position: fixed; bottom: 20px; right: 20px; background-color: #25D366; color: white; border-radius: 50%; width: 60px; height: 60px; display: flex; justify-content: center; align-items: center; text-decoration: none; font-size: 30px; box-shadow: 0 2px 5px rgba(0,0,0,0.3); z-index: 1000;"
-     target="_blank" title="Contáctanos por WhatsApp">
-    💬
+
+  <!-- BOTÓN FLOTANTE WHATSAPP -->
+  <a href="https://wa.me/526641234567?text=Hola%20vengo%20de%20tu%20página%20web%20y%20quiero%20más%20información"
+     class="whatsapp-float" target="_blank">
+    WhatsApp
   </a>
 
 </body>
