@@ -1,135 +1,118 @@
+/* Paleta #3 - Dinámica y fresca */
+:root {
+  --color-fondo: #F3F4F6;
+  --color-primario: #10B981;
+  --color-secundario: #2563EB;
+  --color-texto: #374151;
+  --color-blanco: #FFFFFF;
+}
+
+/* Fondo general */
 body {
-  font-family: Arial, sans-serif;
-  background-color: #f9f9f9;
+  background-color: var(--color-fondo);
+  color: var(--color-texto);
+  font-family: 'Segoe UI', Arial, sans-serif;
   margin: 0;
   padding: 0;
 }
 
-header {
-  background-color: #ff6600;
-  color: white;
-  text-align: center;
-  padding: 20px;
+/* Encabezados */
+h1, h2, h3 {
+  color: var(--color-primario);
+  margin-bottom: 0.5em;
 }
 
+/* Menú de navegación */
 nav {
-  background-color: #333;
-  display: flex;
-  justify-content: center;
-  gap: 20px;
+  background-color: var(--color-secundario);
   padding: 10px;
+  text-align: center;
 }
 
 nav a {
-  color: white;
-  text-decoration: none;
+  color: var(--color-blanco);
+  margin: 0 15px;
   font-weight: bold;
+  text-decoration: none;
 }
 
 nav a:hover {
-  color: #ff6600;
+  text-decoration: underline;
 }
 
-.buscador-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  margin: 30px 0;
-  flex-wrap: wrap;
-}
-
-#buscador {
-  padding: 10px;
-  width: 250px;
-  font-size: 16px;
-  border: 2px solid #ccc;
-  border-radius: 8px;
-  outline: none;
-}
-
-.buscador-container button {
-  padding: 10px 20px;
-  font-size: 16px;
-  background-color: #ff6600;
-  color: white;
+/* Botones */
+button, .btn {
+  background-color: var(--color-primario);
+  color: var(--color-blanco);
   border: none;
-  border-radius: 8px;
+  padding: 10px 20px;
+  border-radius: 6px;
   cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-.buscador-container button:hover {
-  background-color: #e65c00;
+button:hover, .btn:hover {
+  background-color: var(--color-secundario);
 }
 
-#catalogo {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  flex-wrap: wrap;
-  padding: 20px;
-}
-
-.producto {
-  background: white;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  padding: 15px;
-  text-align: center;
-  width: 220px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  transition: transform 0.2s ease;
-}
-
-.producto:hover {
-  transform: scale(1.05);
-}
-
-.producto img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 5px;
-}
-
-.producto h3 {
-  margin: 10px 0 0;
-  font-size: 18px;
-  color: #333;
-}
-
-.producto p {
-  margin: 5px 0;
-  color: #555;
-}
-
-section {
-  padding: 20px;
-  text-align: center;
-}
-
-section h2 {
-  color: #ff6600;
-  margin-bottom: 10px;
-}
-
-footer {
-  background-color: #333;
-  color: white;
-  text-align: center;
-  padding: 20px;
-  margin-top: 30px;
-}
-
-.social-links a {
-  margin: 0 10px;
-  color: white;
+/* Enlaces */
+a {
+  color: var(--color-secundario);
   text-decoration: none;
 }
 
-.social-links a:hover {
-  color: #ff6600;
+a:hover {
+  text-decoration: underline;
 }
 
-.admin-panel {
-  display: none;
+/* Tarjetas de producto */
+.producto {
+  background-color: var(--color-blanco);
+  border: 1px solid #D1D5DB;
+  border-radius: 8px;
+  padding: 15px;
+  margin: 10px;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+/* Formulario de contacto */
+form {
+  background-color: var(--color-blanco);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  max-width: 500px;
+  margin: auto;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #D1D5DB;
+  border-radius: 6px;
+}
+
+/* Pie de página */
+footer {
+  background-color: var(--color-secundario);
+  color: var(--color-blanco);
+  text-align: center;
+  padding: 15px;
+  margin-top: 30px;
+}
+
+/* Botón flotante WhatsApp */
+.whatsapp-float {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: var(--color-primario);
+  color: var(--color-blanco);
+  padding: 12px 18px;
+  border-radius: 50px;
+  font-weight: bold;
+  text-decoration: none;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
